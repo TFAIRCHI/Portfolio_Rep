@@ -25,13 +25,16 @@
   </section>
 
   <!--EDA-->
+  <p>This preview shows the first 10 rows of the dataset, offering an overview of the key features and their formats before analysis.</p>
   <section class="MainCategory">
   <div class="card">
   <h3>Dataset Preview (First 10 rows)</h3>
   <iframe src="./Linear Regression/InitialDataSet.html" width="25%" height="400px" frameborder="0"></iframe>
   </div>
 
+
     <h2>Exploratory Data Analysis</h2>
+    <p>Univariate distributions highlight potential data imbalances or outliers, while bivariate plots reveal linear relationships, correlations, and multicollinearity risks important for linear modeling.</p>
     <!-- Univariate Analysis -->
     <h3>Univariate Analysis: Assessing all variables independent from one another to observe any outliers that may drive skewness / bias</h3>    
   <div class="chart-row">
@@ -95,6 +98,9 @@
  
   <section>
     <h3>Standardized Dataset of Predictor Values for PCA Analysis</h3>
+    <p>PCA requires standardized (mean=0, std=1) data to avoid biasing component weights toward features with larger scales.</p>
+    <p>Standardizing predictors ensures each feature contributes equally to PCA, preventing dominance by variables with larger numeric ranges.</p>
+    <p>PCA identifies linear combinations of predictors that capture the most variance, simplifying the model and minimizing multicollinearity.</p>
     <div class="card">
         <iframe src="./Linear Regression/Standardized_Dataset.html" width="25%" height="400px" frameborder="0"></iframe>
     </div>
@@ -138,15 +144,23 @@
   <p>Results: PC1 and PC2 remain as the retained variables. OLS Below shows a P-Value < .05 indicating significance of fields</p>
 </section>
 
+
 <section class="category">
+
+<h2>OLS Regression Summary - Optimized Model</h2>
+  <p>Shows p-values, R², standard errors, confidence intervals — everything you need to assess significance and assumptions.</p>
+  <p>The OLS regression summary confirms the retained principal components are statistically significant and summarizes overall model performance.</p>
   <div class="card">
-        <h2>OLS Regression Summary - Optimized Model</h2>
         <iframe src="./Linear Regression/OLS_Reg_Summary.html" width="100%" height="600px" frameborder="0"></iframe>
       </div>
     </section>
 
-<div class="metrics-cards-container">
+  <h2>Metrics Baseball Cards Representing Model Accuracy</h2>
+    <p>Clear comparison of train vs. test performance to assess overfitting.</p>
+    <p>Quantifies predictive accuracy.</p>
+    <p>Metrics cards provide a concise comparison of model error on training and test sets, helping evaluate predictive performance and generalization.</p>
 
+<div class="metrics-cards-container">
   <div class="metrics-card">
     <h3>Train Metrics</h3>
     <div class="metric">
@@ -172,11 +186,26 @@
   </div>
 
 </div>
-
+      <h2>Overlay of Actual vs Predicted Sale Prices</h2>
+        <p>Visually demonstrates how well the model predictions align with true sale prices.</p>
+        <p>Highlights systematic errors or bias.</p>
+        <p>This overlay plot allows quick visual inspection of prediction accuracy, revealing if the model systematically over- or under-predicts.</p>
     <div class="card">
-      <h3>Overlay of Actual vs Predicted Sale Prices</h3>
+
       <img src="./Linear Regression/images/predicted_vs_actual.png" width="20%" height="40px" frameborder="15"></img>
     </div>
+  <section class="category">
+  <h2>Overall Findings</h2>
+  <p>
+    This linear regression analysis using principal component analysis (PCA) identified two principal components (PC1 and PC2) that captured the most significant variance in the standardized predictor variables. Through backward stepwise elimination, both retained components were confirmed as statistically significant predictors of housing sale prices.
+  </p>
+  <p>
+    The final optimized model achieved comparable train and test RMSE values, suggesting minimal overfitting and strong generalization to unseen data. Visual inspection of the predicted vs. actual sale prices indicated good alignment, with no clear systematic under- or over-prediction patterns. Residual plots showed random scatter, supporting the assumptions of linear regression.
+  </p>
+  <p>
+    Overall, the analysis demonstrates that dimensionality reduction via PCA combined with backward elimination can effectively reduce feature complexity while retaining predictive power, resulting in a robust and interpretable linear model for predicting housing sale prices.
+  </p>
+</section>
 
 </section>
 
