@@ -1,0 +1,320 @@
+body {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-box {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  width: 200px;
+  z-index: 1000;
+}
+
+.contact-box a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* Side Panel Styles */
+.side-panel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.4s;
+  padding-top: 60px;
+  color: white;
+}
+
+.side-panel a {
+  padding: 10px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #f1f1f1;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-panel a:hover {
+  background-color: #575757;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1200;
+  border-radius: 4px;
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 30px;
+}
+
+.chart-row {
+  display: flex;
+  justify-content: space-around; /* spreads cards evenly */
+  flex-wrap: wrap;               /* wrap cards on smaller screens */
+  gap: 20px;                     /* space between cards */
+  margin-bottom: 50px;
+}
+
+.chart-row .card {
+  flex: 1 1 28%;
+  min-width: 200px;      /* ensures cards don't shrink too small on mobile */
+  box-sizing: border-box;
+}
+.card img, .card iframe {
+  width: 100%;           /* fill card horizontally */
+  height: auto;          /* maintain aspect ratio */
+  display: block;        /* removes inline spacing issues */
+  object-fit: contain;   /* ensures the entire image fits inside without cropping */
+  border-radius: 10px;    /* optional: match card corners */
+}
+
+.intro {
+  max-width: 1000px;
+  margin: 0 auto 40px auto; /* center + space below */
+  text-align: left;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+  margin-top: 0;
+}
+
+.intro p {
+  line-height: 1.6;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #e8f0fe;       /* light blue background */
+  margin: 0;
+  padding: 40px 20px;        /* more spacious top/bottom padding */
+  color: #333;
+}
+
+.intro {
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.intro h2 {
+  font-size: 1.8em;
+  color: #1a73e8; /* Google blue accent */
+  margin-top: 0;
+}
+
+.intro p {
+  line-height: 1.7;
+  font-size: 1.1em;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.25), 
+    0 0 0 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.chart-card:hover {
+  transform: scale(1.6);
+  z-index: 10;
+  box-shadow: 
+    0 28px 80px rgba(0, 0, 0, 0.4), 
+    0 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.chart-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center; /* default; updated below */
+}
+
+/* Leftmost cards: expand to the right */
+.chart-row .chart-card:first-child {
+  transform-origin: left center;
+}
+
+.chart-row .chart-card:nth-child(4n+1) { /* first card in each row */
+  transform-origin: left center;
+}
+
+.chart-row .chart-card:nth-child(4n) {   /* fourth card in each row */
+  transform-origin: right center;
+}
+
+.chart-row .chart-card:nth-child(4n+2),
+.chart-row .chart-card:nth-child(4n+3) { /* middle cards */
+  transform-origin: center center;
+}
+
+/* Rightmost cards: expand to the left */
+.chart-row .chart-card:last-child {
+  transform-origin: right center;
+}
+
+.chart-card:hover {
+  transform: scale(2);
+  z-index: 10;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.MainCategory {
+  max-width: 1200px;
+  margin: 0 auto 80px auto; /* large spacing between categories */
+  text-align: left;
+}
+
+.MainCategory h2 {
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #1a73e8;           /* same accent blue as before */
+  border-bottom: 3px solid #1a73e8;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.page-container {
+  max-width: 1200px;   /* controls overall page width */
+  margin: 0 auto;      /* centers container horizontally */
+  padding: 0 20px;     /* adds side padding */
+}
+
+.left-align {
+  text-align: left;    /* ensures text inside stays left-aligned */
+  margin-left: 0;      /* align block itself to the container’s left edge */
+  margin-right: auto;  /* avoids centering */
+}
+.code-snippet {
+  background-color: #000000;   /* black background */
+  color: #f8dd2be3;              /* orange text */
+  font-family: Consolas, monospace;
+  font-size: 0.95em;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre;            /* preserve formatting */
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: left;            /* ensures left-aligned text */
+}
+
+.card {
+  margin-bottom: 40px; /* or whatever spacing you want */
+}
+
+.metrics-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px; /* space between cards */
+  margin-bottom: 60px;
+}
+
+.metrics-card {
+  background: #1e1e1e;
+  color: #ffa500;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: left;
+  flex: 1 1 300px; /* responsive: grow but limit min size */
+}
+
+.metrics-card h3 {
+  margin-top: 0;
+  font-size: 1.8em;
+  border-bottom: 2px solid #ffa500;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.metric .label {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.metric .value {
+  font-family: Consolas, monospace;
+  font-size: 1.5em;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  margin-bottom: 40px;
+}

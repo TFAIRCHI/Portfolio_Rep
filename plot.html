@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Linear Regression Charts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-container">
+
+  <h1>Linear Regression Model Analysis</h1>
+    <section class="intro">
+    <h2>About the Linear Regression Model</h2>
+    <p>
+      This analysis uses linear regression to predict housing sale prices based on key features
+      such as square footage, property age, and other housing attributes. The primary objective of this model
+      is to identify which variables most strongly influence home prices, providing valuable insights for
+      developers, real estate professionals, and urban planners to make data-driven decisions.
+    </p>
+    <p>
+      By analyzing training and test data distributions, fitting a multiple linear regression model, and
+      evaluating residual plots, we assess both the performance of the model and its assumptions.
+      The charts below illustrate these aspects of the analysis.
+    </p>
+  </section>
+
+  <!--EDA-->
+  <section class="MainCategory">
+  <div class="card">
+  <h3>Dataset Preview (First 10 rows)</h3>
+  <iframe src="./Linear Regression/InitialDataSet.html" width="25%" height="400px" frameborder="0"></iframe>
+  </div>
+
+    <h2>Exploratory Data Analysis</h2>
+    <!-- Univariate Analysis -->
+    <h3>Univariate Analysis: Assessing all variables independent from one another to observe any outliers that may drive skewness / bias</h3>    
+  <div class="chart-row">
+  <div class="card chart-card">
+    <h3>Distribution of Age of Home</h3>
+    <img src="Linear Regression/images/distribution_of_AgeOfHome.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Distribution of Backyard Space</h3>
+    <img src="Linear Regression/images/distribution_of_BackyardSpace.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Distribution of Previous Sale Price</h3>
+    <img src="Linear Regression/images/distribution_of_PreviousSalePrice.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Distribution of Price</h3>
+    <img src="Linear Regression/images/distribution_of_Price.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+  <div class="card chart-card">
+    <h3>Distribution of Property Tax Rate</h3>
+    <img src="Linear Regression/images/distribution_of_PropertyTaxRate.png" width="40%" height="500px" frameborder="0"></img>
+  </div> 
+  <div class="card chart-card">
+    <h3>Distribution of Square Footage</h3>
+    <img src="Linear Regression/images/distribution_of_SquareFootage.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+  
+    <h3>Bivariate Analysis: Assessing for Multicollinearity between independent variables and dependent variable</h3>
+
+  <div class="chart-row">
+  <div class="card chart-card">
+    <h3>Price vs Age of Home</h3>
+    <img src="Linear Regression/images/Bivariate_distribution_of_AgeOfHome.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Price vs Backyard Space</h3>
+    <img src="Linear Regression/images/Bivariate_distribution_of_BackyardSpace.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Price vs Previous Sale Price</h3>
+    <img src="Linear Regression/images/Bivariate_distribution_of_PreviousSalePrice.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+
+  <div class="card chart-card">
+    <h3>Price vs Property Tax Rate</h3>
+    <img src="Linear Regression/images/Bivariate_distribution_of_PropertyTaxRate.png" width="40%" height="500px" frameborder="0"></img>
+  </div>
+  <div class="card chart-card">
+    <h3>Price vs Square Footage</h3>
+    <img src="Linear Regression/images/Bivariate_distribution_of_SquareFootage.png" width="40%" height="500px" frameborder="0"></img>
+  </div> 
+  <div class="card chart-card">
+    <h3></h3>
+  </div>
+ 
+  <section>
+    <h3>Standardized Dataset of Predictor Values for PCA Analysis</h3>
+    <div class="card">
+        <iframe src="./Linear Regression/Standardized_Dataset.html" width="25%" height="400px" frameborder="0"></iframe>
+    </div>
+  
+  
+    <h3>PCA Component Matrix</h3>
+    <div class="card">
+    
+            <iframe src="./Linear Regression/PCAComponent_Matrix.html" width="25%" height="400px" frameborder="0"></iframe>
+    </div>
+  
+  
+    <h3>Scree Plot with Principal Components</h3>
+    <div class="card">
+        <h4>Elbow Rule: The elbow rule suggests selecting the number of principal components at the point where the explained variance curve levels off, indicating diminishing returns; in this scree plot, that occurs around the second component.</h4>
+        <h4>Kaiser Rule: The Kaiser rule recommends keeping principal components with eigenvalues greater than 1, which typically correspond to components explaining more variance than an individual standardized variable.</h4>
+        <h4>Results: PCA 1 and PCA 2 are retained</h4>
+        <img src="/Portfolio/Linear Regression/images/PCA_SCREEPLOT.png" width="20%" height="40px" frameborder="15"></img>
+    </div>
+  
+    <!--<div>
+        <h2>1 Initialize & Fit Model with PCA Retained Components</h2>
+        <h2>2 Backwards Stepwise Elimination</h2>
+        <h2>3 MSE & RMSE</h2>
+
+    </div>-->
+
+    <section class="category">
+  <h2>Backward Stepwise Elimination - Optimization Technique Used</h2>
+  <p>
+    Backward stepwise elimination is a feature selection technique that starts with all candidate predictors in a model
+    and iteratively removes the least significant variable — the one with the highest p-value exceeding a chosen threshold
+    (often 0.05) — until only statistically significant predictors remain. This process refines the model by eliminating
+    variables that don’t meaningfully contribute to explaining the target variable.
+  </p>
+  <p>
+    Using backward elimination improves model interpretability, avoids overfitting by removing redundant predictors,
+    and ensures that the final model includes only features with strong predictive power. In this analysis, backward
+    elimination helped optimize the linear regression by retaining principal components that significantly explain housing prices.
+  </p>
+  <p>Results: PC1 and PC2 remain as the retained variables. OLS Below shows a P-Value < .05 indicating significance of fields</p>
+</section>
+
+<section class="category">
+  <div class="card">
+        <h2>OLS Regression Summary - Optimized Model</h2>
+        <iframe src="./Linear Regression/OLS_Reg_Summary.html" width="100%" height="600px" frameborder="0"></iframe>
+      </div>
+    </section>
+
+<div class="metrics-cards-container">
+
+  <div class="metrics-card">
+    <h3>Train Metrics</h3>
+    <div class="metric">
+      <span class="label">MSE:</span>
+      <span class="value">9,356,676,480.20</span>
+    </div>
+    <div class="metric">
+      <span class="label">RMSE:</span>
+      <span class="value">3.15</span>
+    </div>
+  </div>
+
+  <div class="metrics-card">
+    <h3>Test Metrics</h3>
+    <div class="metric">
+      <span class="label">MSE:</span>
+      <span class="value">9,268,266,675.14</span>
+    </div>
+    <div class="metric">
+      <span class="label">RMSE:</span>
+      <span class="value">3.15</span>
+    </div>
+  </div>
+
+</div>
+
+    <div class="card">
+      <h3>Overlay of Actual vs Predicted Sale Prices</h3>
+      <img src="./Linear Regression/images/predicted_vs_actual.png" width="20%" height="40px" frameborder="15"></img>
+    </div>
+
+</section>
+
+  </div>
+</body>
+</html>

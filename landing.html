@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Scientist Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Data Scientist Portfolio</h1>
+  
+  <div class="grid">
+    <div class="card">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" class="logo">
+      <h2>Linear Regression Model</h2>
+      <p>This notebook presents a linear regression analysis to predict housing prices based on a range of home-related attributes. It is designed for use in a statistical data mining context, leveraging Python libraries for data analysis, visualization, and modeling..</p>
+      <a href="https://github.com/TFAIRCHI/Housing_LR_Model_StatsModel" target="_blank">View on GitHub</a>
+    </div>
+    <div class="card">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" class="logo">
+      <h2>Project One</h2>
+      <p>Short description of what you did, tools used, and outcomes.</p>
+      <a href="https://github.com/yourusername/project-one" target="_blank">View on GitHub</a>
+    </div>
+    <div class="contact-box">
+        <p><strong>Tyler Fairchild</strong></p>
+        <p><a href="mailto:tyler.fairchild@email.com">tyler.fairchild@email.com</a></p>
+        <p><a href="https://linkedin.com/in/tylerfairchild" target="_blank">LinkedIn</a></p>
+    </div>
+  </div>
+  <!-- <div class="chart-scroll-container">
+  <iframe src="plot.html" width="1200px" height="500px" frameborder="0"></iframe>
+  </div> -->
+  <!--Side Panel-->  
+<div id="sidePanel" class="side-panel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closePanel()">&times;</a>
+  <h2>Charts</h2>
+  <a href="plot.html">Linear Regression Chart</a>
+  <a href="anotherchart.html">Project One Chart</a>
+</div>
+  <!-- Open side Panel Button -->
+  <span class="openbtn" onclick="openPanel()">☰ Menu</span>
+  <script>
+  function openPanel() {
+    document.getElementById("sidePanel").style.width = "250px";
+  }
+  
+  function closePanel() {
+    document.getElementById("sidePanel").style.width = "0";
+  }
+  </script>
+</body>
+</html>
