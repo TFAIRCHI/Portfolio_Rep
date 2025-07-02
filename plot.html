@@ -24,17 +24,29 @@
     </p>
   </section>
 
+
+  <section class="category">
+    <h2>Download the Original Dataset</h2>
+    <p>You can download the dataset used in this analysis for your own exploration or reproduction of the results:</p>
+    <a href="./Linear Regression/Dataset 1 Housing Information.csv" download class="download-button">Download Dataset (CSV)</a>
+  </section>
+
   <!--EDA-->
   
   <section class="MainCategory">
   <h2>Dataset Preview (First 10 rows)</h2>
-  <p>This preview shows the first 10 rows of the dataset, offering an overview of the key features and their formats before analysis.</p>
+  <ul class="explanation-list">
+    <li>This preview shows the first 10 rows of the dataset, offering an overview of the key features and their formats before analysis.</li>
+  </ul>
     <div class="card">
       <iframe src="./Linear Regression/InitialDataSet.html" width="25%" height="400px" frameborder="0"></iframe>
     </div>
 
     <h2>Exploratory Data Analysis</h2>
-    <p>Univariate distributions highlight potential data imbalances or outliers, while bivariate plots reveal linear relationships, correlations, and multicollinearity risks important for linear modeling.</p>
+    <ul class="explanation-list">
+      <li>Univariate distributions highlight potential data imbalances or outliers, while bivariate plots reveal linear relationships, correlations, and multicollinearity risks important for linear modeling.</li>
+    </ul>
+
     <!-- Univariate Analysis -->
     <h3>Univariate Analysis: Assessing all variables independent from one another to observe any outliers that may drive skewness / bias</h3>    
   <div class="chart-row">
@@ -66,7 +78,7 @@
     <img src="Linear Regression/images/distribution_of_SquareFootage.png" width="40%" height="500px" frameborder="0"></img>
   </div>
   
-    <h3>Bivariate Analysis: Assessing for Multicollinearity between independent variables and dependent variable</h3>
+  <h3>Bivariate Analysis: Assessing for Multicollinearity between independent variables and dependent variable</h3>
 
   <div class="chart-row">
   <div class="card chart-card">
@@ -98,8 +110,12 @@
  
   <section>
     <h2>Standardized Dataset of Predictor Values for PCA Analysis</h2>
-    <p>PCA requires standardized (mean=0, std=1) data to avoid biasing component weights toward features with larger scales.</p>
-    <p>Standardizing predictors ensures each feature contributes equally to PCA, preventing dominance by variables with larger numeric ranges.</p>
+    <ul class="explanation-list">
+      <li>PCA requires standardized (mean=0, std=1) data to avoid biasing component weights toward features with larger scales.        
+      </li>
+      <li>Standardizing predictors ensures each feature contributes equally to PCA, preventing dominance by variables with larger numeric ranges.        
+      </li>
+    </ul>
 
     <div class="card">
         <iframe src="./Linear Regression/Standardized_Dataset.html" width="25%" height="400px" frameborder="0"></iframe>
@@ -107,7 +123,10 @@
   
   
     <h2>PCA Component Matrix</h2>
-        <p>PCA identifies linear combinations of predictors that capture the most variance, simplifying the model and minimizing multicollinearity.</p>
+      <ul class="explanation-list">
+        <li>PCA identifies linear combinations of predictors that capture the most variance, simplifying the model and minimizing multicollinearity.          
+        </li>
+      </ul>
     <div class="card">
     
             <iframe src="./Linear Regression/PCAComponent_Matrix.html" width="25%" height="400px" frameborder="0"></iframe>
@@ -131,35 +150,37 @@
 
     <section class="category">
   <h2>Backward Stepwise Elimination - Optimization Technique Used</h2>
-  <p>
-    Backward stepwise elimination is a feature selection technique that starts with all candidate predictors in a model
+      <ul class="explanation-list">
+        <li>    Backward stepwise elimination is a feature selection technique that starts with all candidate predictors in a model
     and iteratively removes the least significant variable — the one with the highest p-value exceeding a chosen threshold
     (often 0.05) — until only statistically significant predictors remain. This process refines the model by eliminating
-    variables that don’t meaningfully contribute to explaining the target variable.
-  </p>
-  <p>
-    Using backward elimination improves model interpretability, avoids overfitting by removing redundant predictors,
+    variables that don’t meaningfully contribute to explaining the target variable.</li>
+        <li>Using backward elimination improves model interpretability, avoids overfitting by removing redundant predictors,
     and ensures that the final model includes only features with strong predictive power. In this analysis, backward
-    elimination helped optimize the linear regression by retaining principal components that significantly explain housing prices.
-  </p>
-  <p>Results: PC1 and PC2 remain as the retained variables. OLS Below shows a P-Value < .05 indicating significance of fields</p>
+    elimination helped optimize the linear regression by retaining principal components that significantly explain housing prices.</li>
+    <li>Results: PC1 and PC2 remain as the retained variables. OLS Below shows a P-Value < .05 indicating significance of fields</li>
+      </ul>
 </section>
 
 
 <section class="category">
 
 <h2>OLS Regression Summary - Optimized Model</h2>
-  <p>Shows p-values, R², standard errors, confidence intervals — everything you need to assess significance and assumptions.</p>
-  <p>The OLS regression summary confirms the retained principal components are statistically significant and summarizes overall model performance.</p>
+  <ul class="explanation-list">
+    <li>Shows p-values, R², standard errors, confidence intervals — everything you need to assess significance and assumptions.</li>
+    <li>The OLS regression summary confirms the retained principal components are statistically significant and summarizes overall model performance.</li>
+  </ul>
   <div class="card">
         <iframe src="./Linear Regression/OLS_Reg_Summary.html" width="100%" height="600px" frameborder="0"></iframe>
       </div>
     </section>
 
   <h2>Metrics Baseball Cards Representing Model Accuracy</h2>
-    <p>Clear comparison of train vs. test performance to assess overfitting.</p>
-    <p>Quantifies predictive accuracy.</p>
-    <p>Metrics cards provide a concise comparison of model error on training and test sets, helping evaluate predictive performance and generalization.</p>
+    <ul class="explanation-list">
+      <li>Clear comparison of train vs. test performance to assess overfitting.</li>
+      <li>Quantifies predictive accuracy.</li>
+      <li>Metrics cards provide a concise comparison of model error on training and test sets, helping evaluate predictive performance and generalization.</li>
+    </ul>
 
 <div class="metrics-cards-container">
   <div class="metrics-card">
@@ -170,7 +191,7 @@
     </div>
     <div class="metric">
       <span class="label">RMSE:</span>
-      <span class="value">3.15</span>
+      <span class="value">96,729.92</span>
     </div>
   </div>
 
@@ -182,30 +203,35 @@
     </div>
     <div class="metric">
       <span class="label">RMSE:</span>
-      <span class="value">3.15</span>
+      <span class="value">96,271.84</span>
     </div>
   </div>
 
+  <ul class="explanation-list">
+    <li><strong>Mean Squared Error (MSE):</strong> Measures the average squared difference between predicted and actual values; it penalizes larger errors more heavily than smaller ones.</li>
+    <li><strong>Root Mean Squared Error (RMSE):</strong> The square root of MSE; it represents the average prediction error in the same units as the target variable, making it easier to interpret practically.</li>
+    <li>Lower RMSE values indicate better model performance and closer alignment between predictions and actual outcomes.</li>
+    <li>In this model, similar train and test RMSE (~$96,000) suggest the model generalizes well without overfitting, but the magnitude of the RMSE shows substantial prediction error relative to typical housing prices.</li>
+  </ul>
+
 </div>
       <h2>Overlay of Actual vs Predicted Sale Prices</h2>
-        <p>Visually demonstrates how well the model predictions align with true sale prices.</p>
-        <p>Highlights systematic errors or bias.</p>
-        <p>This overlay plot allows quick visual inspection of prediction accuracy, revealing if the model systematically over- or under-predicts.</p>
+        <ul class="explanation-list">
+          <li>Visually demonstrates how well the model predictions align with true sale prices.</li>
+          <li>Highlights systematic errors or bias.</li>
+          <li>This overlay plot allows quick visual inspection of prediction accuracy, revealing if the model systematically over- or under-predicts.</li>
+        </ul>
     <div class="card">
 
       <img src="./Linear Regression/images/predicted_vs_actual.png" width="20%" height="40px" frameborder="15"></img>
     </div>
   <section class="category">
   <h2>Overall Findings</h2>
-  <p>
-    This linear regression analysis using principal component analysis (PCA) identified two principal components (PC1 and PC2) that captured the most significant variance in the standardized predictor variables. Through backward stepwise elimination, both retained components were confirmed as statistically significant predictors of housing sale prices.
-  </p>
-  <p>
-    The final optimized model achieved comparable train and test RMSE values, suggesting minimal overfitting and strong generalization to unseen data. Visual inspection of the predicted vs. actual sale prices indicated good alignment, with no clear systematic under- or over-prediction patterns. Residual plots showed random scatter, supporting the assumptions of linear regression.
-  </p>
-  <p>
-    Overall, the analysis demonstrates that dimensionality reduction via PCA combined with backward elimination can effectively reduce feature complexity while retaining predictive power, resulting in a robust and interpretable linear model for predicting housing sale prices.
-  </p>
+    <ul class="explanation-list">
+      <li>This linear regression analysis using principal component analysis (PCA) identified two principal components (PC1 and PC2) that captured the most significant variance in the standardized predictor variables. Through backward stepwise elimination, both retained components were confirmed as statistically significant predictors of housing sale prices.</li>
+      <li>The final optimized model achieved comparable train and test RMSE values, suggesting minimal overfitting and strong generalization to unseen data. Visual inspection of the predicted vs. actual sale prices indicated good alignment, with no clear systematic under- or over-prediction patterns. Residual plots showed random scatter, supporting the assumptions of linear regression.</li>
+      <li>Overall, the analysis demonstrates that dimensionality reduction via PCA combined with backward elimination can effectively reduce feature complexity while retaining predictive power, resulting in a robust and interpretable linear model for predicting housing sale prices.</li>
+    </ul>
 </section>
 
 </section>
